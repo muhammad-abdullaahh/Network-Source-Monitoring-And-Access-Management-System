@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Network Monitoring System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a3a5c;
+            color: #fff;
+            margin: 0;
+            padding: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        .login-section {
+            border: 1px solid #fff;
+            padding: 20px;
+            width: 350px;
+            margin: 0 auto 30px auto;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            background: #244b72;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            background: #244b72;
+            border: 1px solid #fff;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .cards-grid {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .stat-card {
+            border: 1px solid #fff;
+            padding: 15px 25px;
+            text-align: center;
+            width: 160px;
+        }
+
+        .stat-card .number {
+            font-size: 1.6rem;
+            font-weight: bold;
+        }
+
+        .stat-card .label {
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #fff;
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        th {
+            background: #244b72;
+        }
+
+        .filters {
+            margin-top: 15px;
+        }
+
+        .filters label {
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        .filters strong {
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .radio-section {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Network Monitoring System</h1>
+    <p>Admin Dashboard</p>
+
+    <div class='login-section'>
+        <h2>Sign In</h2>
+        <div class='form-group'>
+            <label>Username</label>
+            <input type='text' placeholder='Enter username'>
+        </div>
+        <div class='form-group'>
+            <label>Password</label>
+            <input type='password' placeholder='Enter password'>
+        </div>
+        <div class='form-group'>
+            <label>Login Role</label>
+            <select>
+                <option value='admin'>Network Administrator</option>
+                <option value='operator'>Network Operator</option>
+            </select>
+        </div>
+        <button class='btn-login'>Sign In</button>
+    </div>
+
+    <h2>Dashboard Overview</h2>
+
+    <div class='cards-grid'>
+        <div class='stat-card'>
+            <div class='number'>24</div>
+            <div class='label'>Total Servers</div>
+        </div>
+        <div class='stat-card'>
+            <div class='number'>12</div>
+            <div class='label'>Routers/Switches</div>
+        </div>
+        <div class='stat-card'>
+            <div class='number'>3</div>
+            <div class='label'>Active Alerts</div>
+        </div>
+        <div class='stat-card'>
+            <div class='number'>98%</div>
+            <div class='label'>Network Uptime</div>
+        </div>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Device Name</th>
+                <th>Type</th>
+                <th>IP Address</th>
+                <th>Status</th>
+                <th>CPU Usage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Server-01</td>
+                <td>Server</td>
+                <td>192.168.1.10</td>
+                <td>Online</td>
+                <td>45%</td>
+            </tr>
+            <tr>
+                <td>Router-A</td>
+                <td>Router</td>
+                <td>192.168.1.1</td>
+                <td>Warning</td>
+                <td>78%</td>
+            </tr>
+            <tr>
+                <td>Switch-02</td>
+                <td>Switch</td>
+                <td>192.168.1.20</td>
+                <td>Online</td>
+                <td>32%</td>
+            </tr>
+            <tr>
+                <td>Server-05</td>
+                <td>Server</td>
+                <td>192.168.1.50</td>
+                <td>Offline</td>
+                <td>0%</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class='filters'>
+        <strong>Alert Filters:</strong>
+        <label><input type='checkbox' checked> CPU Overload</label>
+        <label><input type='checkbox' checked> Device Offline</label>
+        <label><input type='checkbox'> Bandwidth Exceeded</label>
+
+        <div class='radio-section'>
+            <strong>View Mode:</strong>
+            <label><input type='radio' name='view' checked> All Devices</label>
+            <label><input type='radio' name='view'> Servers Only</label>
+            <label><input type='radio' name='view'> Alerts Only</label>
+        </div>
+    </div>
+
+</body>
+
+</html>
